@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:paquetes/classes/person.dart';
+
 RequestResponse requestResponseFromJson(String str) =>
     RequestResponse.fromJson(json.decode(str));
 
@@ -68,37 +70,5 @@ class Ad {
         'company': company,
         'url': url,
         'text': text,
-      };
-}
-
-class Person {
-  Person({
-    this.id,
-    this.email,
-    this.firstName,
-    this.lastName,
-    this.avatar,
-  });
-
-  int id;
-  String email;
-  String firstName;
-  String lastName;
-  String avatar;
-
-  factory Person.fromJson(Map<String, dynamic> json) => Person(
-        id: json['id'],
-        email: json['email'],
-        firstName: json['first_name'],
-        lastName: json['last_name'],
-        avatar: json['avatar'],
-      );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'email': email,
-        'first_name': firstName,
-        'last_name': lastName,
-        'avatar': avatar,
       };
 }
